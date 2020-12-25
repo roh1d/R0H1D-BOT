@@ -136,7 +136,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
    {
       let is = m.message.conversation.toLocaleLowerCase()
 
-      if (is == '!pantun')
+      if (is == 'pantun')
       {
 
          fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-pantun-pakboy.txt')
@@ -221,7 +221,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
          spawn
       } = require("child_process");
       console.log("writing...")
-      const teks = text.replace(/!nulis/, "")
+      const teks = text.replace(/nulis/, "")
       const split = teks.replace(/(\S+\s*){1,10}/g, "$&\n")
       const fixedHeight = split.split("\n").slice(0, 25).join("\\n")
       console.log(split)
