@@ -213,42 +213,28 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
    }
 
 
-   if (text.includes("nulis"))
-   {
-
-      const
-      {
-         spawn
-      } = require("child_process");
-      console.log("writing...")
-      const teks = text.replace(/nulis/, "")
-      const split = teks.replace(/(\S+\s*){1,10}/g, "$&\n")
-      const fixedHeight = split.split("\n").slice(0, 25).join("\\n")
-      console.log(split)
-      spawn("convert", [
-            "./assets/paper.jpg",
-            "-font",
-            "Indie-Flower",
-            "-size",
-            "700x960",
-            "-pointsize",
-            "18",
-            "-interline-spacing",
-            "3",
-            "-annotate",
-            "+170+222",
-            fixedHeight,
-            "./assets/result.jpg"
-         ])
-         .on("error", () => console.log("error"))
-         .on("exit", () =>
-         {
-            const buffer = fs.readFileSync("assets/result.jpg") // can send mp3, mp4, & ogg -- but for mp3 files the mimetype must be set to ogg
-
-            conn.sendMessage(id, buffer, MessageType.image)
-            console.log("done")
-         })
-   }
+   break
+				case 'nulis':
+				case 'tulis':
+					if (args.length < 1) return reply('Yang mau di tulis apaan?')
+					teks = body.slice(7)
+					reply(mess.wait)
+					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/nulis?text=${teks}&apiKey=${apiKey}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					buff = await getBuffer(anu.result)
+					client.sendMessage(from, buff, image, {quoted: mek, caption: mess.success})
+					break
+				case 'url2img':
+					tipelist = ['desktop','tablet','mobile']
+					if (args.length < 1) return reply('Tipenya apa um?')
+					if (!tipelist.includes(args[0])) return reply('Tipe desktop|tablet|mobile')
+					if (args.length < 2) return reply('Urlnya mana um?')
+					if (!isUrl(args[1])) return reply(mess.error.Iv)
+					reply(mess.wait)
+					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/url2image?tipe=${args[0]}&url=${args[1]}&apiKey=${apiKey}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					buff = await getBuffer(anu.result)
+					client.sendMessage(from, buff, image, {quoted: mek})
 
 
    if (text.includes("quotes"))
