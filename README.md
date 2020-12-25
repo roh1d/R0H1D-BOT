@@ -1,5 +1,3 @@
-## Termux WhatsApp Bot 
- 
 
 ## Installation
 
