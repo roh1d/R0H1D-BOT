@@ -359,7 +359,7 @@ conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
 })
 }
 
-   if (text == '#quran'){
+   if (text == 'quran'){
 axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
     const sr = /{(.*?)}/gi;
     const hs = res.data.acak.id.ayat;
