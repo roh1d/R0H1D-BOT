@@ -111,6 +111,9 @@ conn.sendMessage(id, menu.menu2 ,MessageType.text);
 else if (text == 'menu3'){
 conn.sendMessage(id, menu.menu3 ,MessageType.text);
 }
+else if (text == 'menu4'){
+conn.sendMessage(id, menu.menu4 ,MessageType.text);
+}
 
    if (messageType == 'imageMessage')
    {
@@ -212,7 +215,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 
    }
 
-   else if (text == 'assalamualaikum'){
+   if (text == 'assalamualaikum'){
 conn.sendMessage(id, ' _waalaikumsalam, _Iyah aku disini kak...ada yang bisa kami bantu? Ketik *menu* untuk melihat fitur bot kami🙏_ ' ,MessageType.text);
 }
 else if (text == 'salam'){
@@ -350,8 +353,8 @@ conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType
     })
 }
 
-   if (text.includes("#covid")){
-const teks = text.replace(/#covid /, "")
+   if (text.includes("covid")){
+const teks = text.replace(/covid /, "")
 axios.get(`https://arugaz.herokuapp.com/api/coronaindo`).then((res) => {
 conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
     let hasil = ` *🔎DATA WABAH COVID-19 TERBARU DI INDONESIA🔍* \n\n *Kasus Baru* : _${res.data.kasus_baru}_ \n\n *Kasus Total* : _${res.data.kasus_total}_ \n\n *Meninggal* : _${res.data.meninggal}_ \n\n *Negara* : _${res.data.negara}_ \n\n *Penanganan* : _${res.data.penanganan}_ \n\n *Sembuh* : _${res.data.sembuh}_ \n\n *Terakhir* : _${res.data.terakhir}_ `;
@@ -392,7 +395,7 @@ axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
          });
    }
 
-   if (text.includes("#katabijak")){
+   if (text.includes("katabijak")){
 const teks = text.replace(/#katabijak /, "")
 axios.get(`https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/katabijax.txt${teks}`).then((res) => {
     let hasil = `katabijak tersedia\n👇👇👇👇👇👇👇👇👇\n\nJudul: ${res.data.title}\n\katabijak Tersedia: ${res.data.filesize}\n\nLink: ${res.data.result}`;
