@@ -4,10 +4,6 @@ A Lightweight WhatApp Bot Without Headless Browser
 
 <img src="https://www.pngkey.com/png/full/824-8245235_if-you-just-want-crazy-anime.png" width="300" >
 
-
-<a href="https://instagram.com/m.rohid_hidayat21"><img src="https://img.shields.io/twitter/follow/hidayat_rohid?style=flat-square"/></a>
-![Fork](https://img.shields.io/github/forks/roh1d/botwa?style=flat-square)
-
  
 
 ## Installation
