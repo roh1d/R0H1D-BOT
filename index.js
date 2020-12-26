@@ -1,7 +1,7 @@
 const XBOT = 'ROHIDXBOT'; 
 const instagram = 'https://bit.ly/2KYlka9'; 
 const nomer = 'Wa.me/+6282124946711'; 
-const aktif = 'Tergantung sinyal';
+const aktif = 'Tergantung internet';
 
 const qrcode = require("qrcode-terminal");
 const moment = require("moment");
@@ -25,7 +25,7 @@ const
    ReconnectMode,
    ProxyAgent,
    waChatKey,
-} = require("@adiwajshing/bot");
+} = require("@adiwajshing/baileys");
 var jam = moment().format("HH:mm");
 
 function foreach(arr, func)
