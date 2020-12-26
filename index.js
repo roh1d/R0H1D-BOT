@@ -372,13 +372,18 @@ conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType
     })
 }
 
-   if (text.includes("covid")){
-const teks = text.replace(/covid /, "")
-axios.get(`https://arugaz.herokuapp.com/api/coronaindo`).then((res) => {
-conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
-    let hasil = ` *🔎DATA WABAH COVID-19 TERBARU DI INDONESIA🔍* \n\n *Kasus Baru* : _${res.data.kasus_baru}_ \n\n *Kasus Total* : _${res.data.kasus_total}_ \n\n *Meninggal* : _${res.data.meninggal}_ \n\n *Negara* : _${res.data.negara}_ \n\n *Penanganan* : _${res.data.penanganan}_ \n\n *Sembuh* : _${res.data.sembuh}_ \n\n *Terakhir* : _${res.data.terakhir}_ `;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
+if (text.includes("covid"))
+   {
+const get = require('got')
+    const body = await get.post('https://api.kawalcorona.com/indonesia', {
+
+    }).json();
+    var positif = (body[0]['positif']);
+    var sembuh  = (body[0]['sembuh']);
+    var meninggal = (body[0]['meninggal']);
+    var dirawat = (body[0]['dirawat']);
+    console.log(body[0]['name'])
+    conn.sendMessage(id,` *🔎DATA WABAH COVID-19 TERBARU DI INDONESIA🔍* \n\n *📈Positif ==>* _${positif}_ \n📉 *Sembuh ==>* _${sembuh}_ \n *📋Meninggal ==>* _${meninggal}_ \n *🗒️Dirawat ==>* _${dirawat}_ `, MessageType.text);
 }
 
    if (text == 'quran'){
