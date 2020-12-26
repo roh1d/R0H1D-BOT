@@ -119,6 +119,10 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
 else if (text == 'menu4'){
 conn.sendMessage(id, menu.menu4 ,MessageType.text);
 }
+else if (text == 'donasi'){
+conn.sendMessage(id, menu.donasi ,MessageType.text);
+}
+
 
    if (messageType == 'imageMessage')
    {
