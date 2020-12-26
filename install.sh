@@ -7,3 +7,5 @@ npm i -g cwebp
 npm i -g ytdl 
 npm i
 npm update
+
+echo "[*] Semua kebutuhan sudah terinstall, ketikkan perintah \"node index.js\" untuk menjalankan script"
