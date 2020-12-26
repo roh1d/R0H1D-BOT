@@ -5,7 +5,7 @@
 # Termux
 ```bash
 > git clone https://github.com/roh1d/botwa
-> cd botwa
+> cd R0H1D-BOT
 > bash install.sh
 
 ```
