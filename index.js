@@ -143,41 +143,7 @@ conn.sendMessage(id, menu.donasi ,MessageType.text);
          });
       }
    }
-            break
-        case 'stickergif':
-        case 'stikergif':
-        case 'sgif':
-            if (isMedia) {
-                if (mimetype === 'video/mp4' && message.duration < 10 || mimetype === 'image/gif' && message.duration < 10) {
-                    const mediaData = await decryptMedia(message, uaOverride)
-                    client.reply(from, '[WAIT] Sedang di proses⏳ silahkan tunggu ± 1 min!', id)
-                    const filename = `./media/aswu.${mimetype.split('/')[1]}`
-                    await fs.writeFileSync(filename, mediaData)
-                    await exec(`gify ${filename} ./media/output.gif --fps=30 --scale=240:240`, async function (error, stdout, stderr) {
-                        const gif = await fs.readFileSync('./media/output.gif', { encoding: "base64" })
-                        await client.sendImageAsSticker(from, `data:image/gif;base64,${gif.toString('base64')}`)
-                    })
-                } else (
-                    client.reply(from, '[❗] Kirim video dengan caption stickergif* max 10 sec!', id)
-                )
-            }
-            break
-	    case 'stikernobg':
-        case 'stikernobg':
-	    if (isMedia) {
-                try {
-                    var mediaData = await decryptMedia(message, uaOverride)
-                    var imageBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
-                    var base64img = imageBase64
-                    var outFile = './media/img/noBg.png'
-                    // untuk api key kalian bisa dapatkan pada website remove.bg
-                    var result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'API-KEY', size: 'auto', type: 'auto', outFile })
-                    await fs.writeFile(outFile, result.base64img)
-                    await client.sendImageAsSticker(from, `data:${mimetype};base64,${result.base64img}`)
-                } catch(err) {
-                    console.log(err)
-                }
-            }
+            
             
    if (messageType === MessageType.text)
    {
@@ -283,10 +249,10 @@ conn.sendMessage(id, ' _Iyah aku disini kak...ada yang bisa kami bantu? Ketik *m
 else if (text == 'Asu'){
 conn.sendMessage(id, 'Lu Asw' ,MessageType.text);
 }
-else if (text == '#owner'){
+else if (text == 'owner'){
 conn.sendMessage(id, ' *Owner MUHAMMAD ROHID HIDAYAT Wa.me/+6282124946711* ' ,MessageType.text);
 }
-else if (text == '#creator'){
+else if (text == 'creator'){
 conn.sendMessage(id, ' *Creator MUHAMMAD ROHID HIDAYAT Wa.me/+6282124946711* ' ,MessageType.text);
 }
 else if (text == 'Pagi'){
@@ -448,7 +414,7 @@ axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
          });
    }
 
-   if (text.includes("katabijak")){
+   if (text.includes("bijak")){
 const teks = text.replace(/#katabijak /, "")
 axios.get(`https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/katabijax.txt${teks}`).then((res) => {
     let hasil = `katabijak tersedia\n👇👇👇👇👇👇👇👇👇\n\nJudul: ${res.data.title}\n\katabijak Tersedia: ${res.data.filesize}\n\nLink: ${res.data.result}`;
