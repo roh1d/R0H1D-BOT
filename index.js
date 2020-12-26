@@ -324,6 +324,9 @@ conn.sendMessage(id, ' _love you too😻_ ' ,MessageType.text);
 else if (text == 'Mba'){
 conn.sendMessage(id, ' _Iyah aku disini kak...ada yang bisa kami bantu? Ketik *menu* untuk melihat fitur bot kami🙏_ ' ,MessageType.text);
 }
+else if (text == 'Bro'){
+conn.sendMessage(id, ' _Iyah aku disini kak...ada yang bisa kami bantu? Ketik *menu* untuk melihat fitur bot kami🙏_ ' ,MessageType.text);
+}
 else if (text == 'Bre'){
 conn.sendMessage(id, ' _Iyah aku disini kak...ada yang bisa kami bantu? Ketik *menu* untuk melihat fitur bot kami🙏_ ' ,MessageType.text);
 }
@@ -466,14 +469,14 @@ axios.get(`https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/
 
 if (text.includes("ptl2"))
    {
-    var items = ["cowo tampan", "cowo ganteng", "cowo cakep", "korean boy"];
+    var items = ["cowo tiktok", "cowo ganteng", "cowo cakep", "korean boy"];
     var cowo = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cowo;
     
     axios.get(url)
       .then((result) => {
         var b = JSON.parse(JSON.stringify(result.data));
-        var cewek =  b[Math.floor(Math.random() * b.length)];
+        var cowok =  b[Math.floor(Math.random() * b.length)];
         imageToBase64(cowok) // Path to the image
         .then(
             (response) => {
