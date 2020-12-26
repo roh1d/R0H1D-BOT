@@ -469,7 +469,7 @@ axios.get(`https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/
 
 if (text.includes("ptl2"))
    {
-    var items = ["cowo tiktok", "cowo ganteng", "cowo cakep", "korean boy"];
+    var items = ["cowo ganteng", "cogan", "korean boy", "chinese boy", "japan boy", "cowok indo ganteng", "cowok korea"];
     var cowo = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + cowo;
     
