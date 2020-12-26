@@ -423,7 +423,7 @@ axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
    }
 
    if (text.includes("bijak")){
-const teks = text.replace(/#katabijak /, "")
+const teks = text.replace(/bijak /, "")
 axios.get(`https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/katabijax.txt${teks}`).then((res) => {
     let hasil = `katabijak tersedia\n👇👇👇👇👇👇👇👇👇\n\nJudul: ${res.data.title}\n\katabijak Tersedia: ${res.data.filesize}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
@@ -437,6 +437,70 @@ axios.get(`https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
+
+else if (text.includes("nama")) 
+  {
+    const cheerio = require('cheerio');
+    const request = require('request');
+    var nama = text.split("#nama ")[1];
+    var req = nama.replace(/ /g,"+");
+    request.get({
+        headers: {'content-type' : 'application/x-www-form-urlencoded'},
+        url:     'http://www.primbon.com/arti_nama.php?nama1='+ req +'&proses=+Submit%21+',
+      },function(error, response, body){
+          let $ = cheerio.load(body);
+          var y = $.html().split('arti:')[1];
+          var t = y.split('method="get">')[1];
+          var f = y.replace(t ," ");
+          var x = f.replace(/<br\s*[\/]?>/gi, "\n");
+          var h  = x.replace(/<[^>]*>?/gm, '');
+      console.log(""+ h);
+      conn.sendMessage(id,
+            `
+      Arti dari namamu adalah
+
+🐣🐣🐣🐣🐣🐣🐣🐣🐣🐣🐣🐣🐣
+
+         Nama _*${nama}*_ ${h}
+         
+🐥🐥🐥🐥🐥🐥🐥🐥🐥🐥🐥🐥🐥
+
+`,
+ MessageType.text);
+  });
+  }
+  else if (text.includes("pasangan ")) {
+    const request = require('request');
+    var gh = text.split("pasangan ")[1];
+    var namamu = gh.split("&")[0];
+    var pasangan = gh.split("&")[1];
+    request.get({
+        headers: {'content-type' : 'application/x-www-form-urlencoded'},
+        url:     'http://www.primbon.com/kecocokan_nama_pasangan.php?nama1='+ namamu +'&nama2='+ pasangan +'&proses=+Submit%21+',
+
+    },function(error, response, body){
+        let $ = cheerio.load(body);
+      var y = $.html().split('<b>KECOCOKAN JODOH BERDASARKAN NAMA PASANGAN</b><br><br>')[1];
+        var t = y.split('.<br><br>')[1];
+        var f = y.replace(t ," ");
+        var x = f.replace(/<br\s*[\/]?>/gi, "\n");
+        var h  = x.replace(/<[^>]*>?/gm, '');
+        var d = h.replace("&amp;", '&')
+      console.log(""+ d);
+      conn.sendMessage(id, `
+
+🐼🐼🐼🐼🐼🐼🐼🐼🐼
+
+ *Kecocokan berdasarkan nama*
+
+
+ ${d}
+
+
+🐼🐼🐼🐼🐼🐼🐼🐼🐼
+    `, MessageType.text);
+  });
+  }
 
    if (text.includes("ptl1"))
    {
@@ -534,6 +598,15 @@ axios.get(`https://alfians-api.herokuapp.com/api/chord?q=${teks}`).then((res) =>
 })
 }
 
+if (text.includes("lirik")){
+	const teks = text.split("lirik")[1]
+	axios.get(`http://scrap.terhambar.com/lirik?word=${teks}`).then ((res) => {
+	     conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
+	 	let hasil = `🎶lirik🎶 lagu ${teks} \n\n\n ${res.data.result.lirik}`
+	conn.sendMessage(id, hasil, MessageType.text)
+	})
+}
+
 if (text.includes("twt")){
 const teks = text.replace(/twt /, "")
 axios.get(`https://mhankbarbar.herokuapp.com/api/twit?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
@@ -577,6 +650,65 @@ axios.get(`https://arugaz.herokuapp.com/api/dewabatch?q=${teks}`).then((res) => 
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
+
+if (text.includes("loli"))
+   {
+    var items = ["anime loli","anime loli sange","anime loli fackgirll","anime loli i love you"];
+    var nime = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar=" + nime;
+    
+    axios.get(url)
+      .then((result) => {
+        var n = JSON.parse(JSON.stringify(result.data));
+        var nimek =  n[Math.floor(Math.random() * n.length)];
+        imageToBase64(nimek) 
+        .then(
+            (response) => {
+	var buf = Buffer.from(response, 'base64'); 
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error);
+            }
+        )
+    
+    });
+    }
+
+if (text.includes("animehd"))
+   {
+    var items = ["anime girl", "anime cantik", "anime", "anime aesthetic", "anime hd", "gambar anime hd"];
+    var nime = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar=" + nime;
+    
+    axios.get(url)
+      .then((result) => {
+        var n = JSON.parse(JSON.stringify(result.data));
+        var nimek =  n[Math.floor(Math.random() * n.length)];
+        imageToBase64(nimek) 
+        .then(
+            (response) => {
+    conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
+	var buf = Buffer.from(response, 'base64'); 
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error);
+            }
+        )
+    
+    });
+    }
 
 if (text.includes("scdl")){
 const fs = require("fs");
