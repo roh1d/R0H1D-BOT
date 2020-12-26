@@ -4,7 +4,7 @@
 
 # Termux
 ```bash
-> git clone https://github.com/roh1d/botwa
+> git clone https://github.com/roh1d/R0H1D-BOT
 > cd R0H1D-BOT
 > bash install.sh
 
@@ -12,7 +12,7 @@
 
 # Linux ( debian & ubuntu )
 ```bash
-> git clone https://github.com/roh1d/botwa
+> git clone https://github.com/roh1d/R0H1D-BOT
 > cd R0H1D-BOT
 > bash install.sh
 
