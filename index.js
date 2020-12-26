@@ -1,3 +1,8 @@
+const XBOT = 'ROHIDXBOT'; 
+const instagram = 'https://bit.ly/2KYlka9'; 
+const nomer = 'Wa.me/+6282124946711'; 
+const aktif = 'Tergantung sinyal';
+
 const qrcode = require("qrcode-terminal");
 const moment = require("moment");
 const cheerio = require("cheerio");
@@ -20,7 +25,7 @@ const
    ReconnectMode,
    ProxyAgent,
    waChatKey,
-} = require("@adiwajshing/baileys");
+} = require("@adiwajshing/bot");
 var jam = moment().format("HH:mm");
 
 function foreach(arr, func)
