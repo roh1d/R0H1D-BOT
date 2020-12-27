@@ -377,7 +377,6 @@ conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType
 
 if (text.includes("covid"))
    {
-const get = require('got')
     const body = await get.post('https://api.kawalcorona.com/indonesia', {
 
     }).json();
