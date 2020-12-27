@@ -817,23 +817,37 @@ scdl("https://m.soundcloud.com/abdul-muttaqin-701361735/lucid-dreams-gustixa-ft-
 
 
 
- if (text.includes("tts")){
-const teks = text.replace(/tts /, "")
-const gtts = (`https://rest.farzain.com/api/tts.php?id=${teks}&apikey=O8mUD3YrHIy9KM1fMRjamw8eg`)
-conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
-    conn.sendMessage(id, gtts ,MessageType.text);
+ else if (text.includes("tts")) {
+  var teks = text.split("ttsid ")[1];
+  var path = require('path');
+  var text1 = teks.slice(6);
+  text1 = suara;
+  var suara = text.replace(/!ttsid/g, text1);
+  var filepath = 'mp3/bacot.wav';
+  
+  
+/*
+ * save audio file
+ */
+
+gtts.save(filepath, suara, function() {
+  console.log(`${filepath} MP3 SAVED!`)
+});
+await new Promise(resolve => setTimeout(resolve, 500));
+
+	if(suara.length > 200){ // check longness of text, because otherways google translate will give me a empty file
+  msg.reply("Text to long, split in text of 200 characters")
+}else{
+
+const buffer = fs.readFileSync(filepath)
+	conn.sendMessage(id , buffer , MessageType.audio);
 
 };
 
 
 }
 
-
-
-
-
-
-   // end of file
+// end of file
 
 
 })
