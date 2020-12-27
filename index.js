@@ -74,36 +74,8 @@ conn.on('message-new', async(m) =>
    console.log(`[ ${moment().format("HH:mm:ss")} ] (${id.split("@s.whatsapp.net")[0]} => ${text}`);
 
 
-// Groups
+// Fitur menu
 
-if (text.includes("!buatgrup"))
-   {
-var nama = text.split("!buatgrup")[1].split("-nomor")[0];
-var nom = text.split("-nomor")[1];
-var numArray = nom.split(",");
-for ( var i = 0; i < numArray.length; i++ ) {
-    numArray[i] = numArray[i] +"@s.whatsapp.net";
-}
-var str = numArray.join("");
-console.log(str)
-const group = await conn.groupCreate (nama, str)
-console.log ("created group with id: " + group.gid)
-conn.sendMessage(group.gid, "hello everyone", MessageType.extendedText) // say hello to everyone on the group
-
-}
-
-// FF
-if(text.includes("!cek")){
-var num = text.replace(/!cek/ , "")
-var idn = num.replace("0","+62");
-
-console.log(id);
-const gg = idn+'@s.whatsapp.net'
-
-const exists = await conn.isOnWhatsApp (gg)
-console.log(exists);
-conn.sendMessage(id ,`${gg} ${exists ? " exists " : " does not exist"} on WhatsApp`, MessageType.text)
-}
 if (text == 'menu'){
 conn.sendMessage(id, menu.menu ,MessageType.text);
 }
@@ -123,6 +95,7 @@ else if (text == 'donasi'){
 conn.sendMessage(id, menu.donasi ,MessageType.text);
 }
 
+//Fiturnya
 
    if (messageType == 'imageMessage')
    {
@@ -782,24 +755,17 @@ if (text.includes("animehd"))
     });
     }
 
-if (text.includes("scdl")){
-const fs = require("fs");
-const scdl = require("./lib/scdl");
+/*if (text.includes("!chord")){
+    const teks = text.split("!chord")[1]
+    axios.get(`https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=${teks}`).then ((res) => {
+         conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.tex)
+        let hasil = `❣ ️ *chord music* ❣ ️${teks} \n\n\n ${res.data.result.lirik}`
+    conn.sendMessage(id, hasil, MessageType.text)*/
 
-scdl.setClientID("iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX");
-
-scdl("https://m.soundcloud.com/abdul-muttaqin-701361735/lucid-dreams-gustixa-ft-vict-molina")
-    .pipe(fs.createWriteStream("mp3/song.mp3"));
+})
 }
 
 
 
- if (text.includes("tts")){
-const teks = text.replace(/tts /, "")
-const gtts = (`https://rest.farzain.com/api/tts.php?id=${teks}&apikey=O8mUD3YrHIy9KM1fMRjamw8eg`)
-conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
-    conn.sendMessage(id, gtts ,MessageType.text);
-};
-}
 })
 //End off file
