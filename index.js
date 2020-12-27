@@ -1,3 +1,7 @@
+/*Script by R0H1D X AR1S CODE
+DILARANG MENGUBAH NAMA INI TANPA SEIZIN KAMI BERDUA!!
+*/
+
 const XBOT = 'ROHIDXBOT'; 
 const instagram = 'https://bit.ly/2KYlka9'; 
 const nomer = 'Wa.me/+6282124946711'; 
@@ -334,7 +338,20 @@ else if (text == 'Thanks'){
 conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType.text);
 }
 
-   if (text.includes('nulis')){
+   if (text.includes('!nulis')){
+  var teks = text.replace(/!nulis /, '')
+    axios.get('https://bangandre.herokuapp.com/nulis?teks='+teks)
+    .then((res) => {
+      imageToBase64(res.data.result)
+        .then(
+          (ress) => {
+            conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
+            var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
+}
+if (text.includes('nulis')){
   var teks = text.replace(/nulis /, '')
     axios.get('https://mhankbarbars.herokuapp.com/nulis?text='+teks)
     .then((res) => {
@@ -345,29 +362,14 @@ conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
         })
-     })
-}
-
-   
-if (text.includes("covidindo"))
-   {
-const get = require('got')
-    const body = await get.post('https://api.kawalcorona.com/indonesia', {
-
-    }).json();
-    var positif = (body[0]['positif']);
-    var sembuh  = (body[0]['sembuh']);
-    var meninggal = (body[0]['meninggal']);
-    var dirawat = (body[0]['dirawat']);
-    console.log(body[0]['name'])
-    conn.sendMessage(id,`❣covid -indonesia❣\n\nPositif ==> ${positif} \nSembuh ==> ${sembuh} \nMeninggal ==> ${meninggal}\nDirawat ==> ${dirawat}`, MessageType.text);
+    })
 }
 
 if (text.includes("covidnegara")){
 const aris = text.replace(/covidnegara /, "")
 axios.get(`https://arugaz.herokuapp.com/api/corona?country=${aris}`).then((res) => {
 conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
-    let hasil = `Negara : ${res.data.result.country}\n\nActive : ${res.data.result.active}\ncasesPerOneMillion :${res.data.result.casesPerOneMillion}\ncritical : ${res.data.result.critical}\ndeathsPerOneMillion : ${res.data.result.deathsPerOneMillion}\nrecovered : ${res.data.result.recovered}\ntestPerOneMillion : ${res.data.result.testPerOneMillion}\ntodayCases : ${res.data.result.todayCases}\ntodayDeath : ${res.data.result.todayDeath}\ntotalCases : ${res.data.result.totalCases}\ntotalTest : ${res.data.result.totalTest}`;
+    let hasil = `Negara : ${res.data.result.country}\n\nAktif : ${res.data.result.active}\nKasus :${res.data.result.casesPerOneMillion}\nKritis : ${res.data.result.critical}\nMeninggal : ${res.data.result.deathsPerOneMillion}\nrecovered : ${res.data.result.recovered}\Dampak : ${res.data.result.testPerOneMillion}\nKasus hari ini : ${res.data.result.todayCases}\nKematian hari ini : ${res.data.result.todayDeath}\nTotal kasus : ${res.data.result.totalCases}\nTotal dampak : ${res.data.result.totalTest}`;
     conn.sendMessage(id, hasil ,MessageType.text);
   })
  }
@@ -434,7 +436,7 @@ if (text.includes("nama"))
   {
     const cheerio = require('cheerio');
     const request = require('request');
-    var nama = text.split("!nama ")[1];
+    var nama = text.split("nama ")[1];
     var req = nama.replace(/ /g,"+");
     request.get({
         headers: {'content-type' : 'application/x-www-form-urlencoded'},
@@ -672,7 +674,7 @@ if (text.includes("animehd"))
       });
     }
 
-if (text.includes("!scdl")){
+if (text.includes("scdl")){
 const fs = require("fs");
 const scdl = require("./lib/scdl");
 
@@ -684,8 +686,8 @@ scdl("https://m.soundcloud.com/abdul-muttaqin-701361735/lucid-dreams-gustixa-ft-
 
 
 
- else if (text.includes("!tts")) {
-  var teks = text.split("!ttsid ")[1];
+ else if (text.includes("tts")) {
+  var teks = text.split("ttsid ")[1];
   var path = require('path');
   var text1 = teks.slice(6);
   text1 = suara;
