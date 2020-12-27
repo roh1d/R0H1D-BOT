@@ -802,5 +802,3 @@ conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', Me
 }
 
 //End off file
-
-})
