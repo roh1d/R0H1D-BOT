@@ -333,62 +333,6 @@ conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType
 else if (text == 'Thanks'){
 conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType.text);
 }
-else if (text == '!menu'){
-conn.sendMessage(id, '*SALAH!!* Masukan perintah *menu* ' ,MessageType.text)
-}                                    
-else if (text == 'nama'){
-conn.sendMessage(id, '*SALAH!!* contoh: nama Rendy' ,MessageType.text)
-}
-else if (text == 'pasangan'){
-conn.sendMessage(id, '*SALAH!!* contoh: !lpasangan Rendy & Reina' ,MessageType.text)
-}
-
-else if (text == '!listzodiak'){
-conn.sendMessage(id, '*SALAH!!* Masukan perintah listzodiak' ,MessageType.text)
-}
-else if (text == '!zodiak'){
-conn.sendMessage(id, '*SALAH!!* Masukan perintah zodiak contoh : zodiak Scorpio' ,MessageType.text)
-}
-else if (text == '!stiker'){
-conn.sendMessage(id, '*SALAH!!* masukan gambar dengan caption stiker' ,MessageType.text)
-
-if (text == 'zodiak Aries'){
-conn.sendMessage(id, '*zodiak Aries* Aries: 21 Maret - 20 April Pemilik zodiak Aries merupakan sosok yang pemberani dan memiliki jiwa petualang yang besar. Mereka adalah orang yang kreatif, agresif, dan berani berinisiatif untuk melakukan perubahan. Selain itu, sifat dan karakter zodiak Aries juga pantang menyerah, enerjik, pandai beradaptasi, serta cepat belajar. Namun, zodiak berlambang domba jantan ini memiliki sifat keras kepala, ambisius, dan kerap mengambil risiko tanpa berpikir panjang. ' ,MessageType.text)
-}
-else if (text == 'zodiak Taurus'){
-conn.sendMessage(id, '*zodiak Taurus* Taurus: 21 April - 20 Mei Nalurimu sedang bekerja keras hari ini dan kamu harus mempercayai mereka dan melakukan apa yang mereka katakan. Meskipun semua orang di sekitarmu tidak setuju dan mengikuti jalan yang berbeda, kamu harus tetap berpegang pada jalanmu sendiri. Ini mungkin akan menjadi keputusan yang sulit untuk dibuat, tetapi kamu akan segera menuai hasilnya.' ,MessageType.text)
-}
-else if (text == 'zodiak Gemini'){
-conn.sendMessage(id, '*zodiak Gemini* Gemini: 21 Mei - 20 Juni Kamu tidak meluangkan waktu untuk menyelesaikan masalah sepele. Hari ini mereka telah menumpuk untuk tampil besar. Hari ini kamu merasa dirimu terjerat. Masalahnya menjadi rumit dan kamu tidak tahu harus mulai dari mana. Dianjurkan untuk berbicara tatap muka. Di penghujung hari, mungkin kamu akan merasa nyaman berada di dekat pasangan.' ,MessageType.text)
-}
-else if (text == 'zodiak Cancer'){
-conn.sendMessage(id, '*zodiak Cancer* Cancer: 21 Juni - 20 Juli Perdebatan kecil cenderung muncul sepanjang hari. Penting bagi Anda untuk mengabaikan masalah kecil hari ini. Jika tidak, Anda hanya akan menghancurkan kedamaian pikiran Anda sendiri. Cobalah untuk berbagi masalah Anda dengan seseorang karena ini bisa sangat membantu dalam meningkatkan mood Anda. Merencanakan aktivitas sendiri bisa menjanjikan hari ini.' ,MessageType.text)
-}
-else if (text == 'zodiak Leo'){
-conn.sendMessage(id, '*zodiak Leo* Leo: 21 Juli - 21 Agustus sangat pendendam, mereka tidak akan pernah melupakan kejadian bersejarah yang paling pahit yang telah mereka terima, mereka tidak bisa berbasa-basi kepada orang-orang yang telah menyakiti mereka, jika mereka sudah tidak suka dengan seseorang, mereka akan menunjukannya, tetapi berbanding terbalik kepada pasangannya mereka sangat pemaaf tetapi untuk orang lain dia sangat pendendam.' ,MessageType.text)
-}
-else if (text == 'zodiak Virgo'){
-conn.sendMessage(id, '*zodiak Virgo* Virgo: 22 Agustus - 22 Pada dasarnya orang dengan karakter zodiak Virgo adalah orang yang cenderung pendiam. Meski demikian sikap dewasa dan diplomatis yang tinggi membuat mereka mudah dalam menyesuaikan lingkungan pertemanan. Tidak sulit bagi mereka untuk mencari teman baru di lingkungannya.' ,MessageType.text)
-}
-else if (text == 'zodiak Libra'){
-conn.sendMessage(id, '*zodiak libra* Libra: 23 September - 22 Oktober dikenal sebagai sosok yang dapat bekerja sama, diplomatis, ramah, berpikiran adil, dan memiliki jiwa sosial yang tinggi. Mereka juga menyukai kelembutan, berbagi dengan orang lain, dan berjalan-jalan ke luar rumah. Sosok yang lahir dengan zodiak ini sangat tidak menyukai kekerasan, ketidakadilan, dan suara yang bising.' ,MessageType.text)
-}
-else if (text == 'zodiak Scorpio'){
-conn.sendMessage(id, '*zodiak Scorpio* Scorpio: 23 Oktober - 22 November sendiri juga dipengaruhi oleh elemen air yang membuat mereka tampak terlihat tenang namun juga elemen ini mempengaruhi tindakan dan dorongan emosi yang kuat dari pribadi pemilik zodiak scorpio sendiri. Terkadang mereka cenderung impulsif dan tidak mampu mengendalikan luapan perasaannya sendiri. Bagi scorpio, emosi harus diekspresikan untuk menikmati setiap moment yang terjadi saat itu juga. Namun uniknya mereka mewujudkan emosi tersebut dengan cara yang berbeda dari pemilik zodiak lainnya.' ,MessageType.text)
-}
-else if (text == 'zodiak Sagittarius'){
-conn.sendMessage(id, '*zodiak Sagitarius* Sagitarius: 23 November - 20 Desember terkenal berjiwa petualang, cerdas, serta memiliki pengetahuan yang luas. Mereka merupakan sosok yang percaya diri, optimis, dan selalu berpikir positif. Pemilik zodiak Sagitarius pada umumnya selalu jujur, terus terang, pintar membawa diri, dan menjadi sosok inspirasi bagi orang lain. Namun, karakter dan sifat zodiak Sagitarius yang terlalu berterus terang dan percaya diri berlebihan kadang membuat mereka tersandung masalah.berjiwa Petualang, Begini Karakter dan Sifat Zodiak Sagitarius ' ,MessageType.text)
-}
-else if (text == 'zodiak Capricorn'){
-conn.sendMessage(id, '*zodiak Capricon* Capricorn: 21 Desember - 19 Januari sosok yang ambisius. Namun, perlu diketahui bahwa ambisius dalam konteks ini tidak sepenuhnya bersifat negatif. Capricon sangat tahu apa yang mereka inginkan dan apa yang mereka tuju, sehingga ketika mereka memiliki suatu tujuan yang ingin dicapai, maka mereka tidak akan pernah berhenti untuk berusaha.Selain itu, sifat disiplin dan bertanggung jawab juga menjadi salah satu kelebihan dari Capricon.Mereka juga dikenal sebagai sosok yang dewasa, terutama dalam menyikapi permasalahan yang tengah dihadapi. Karena hal itulah, mereka sangat bijaksana dan setia kawan. Kedua karakter yang dimiliki tersebut menjadikan zodiak Capricon sangat cocok untuk dijadikan sebagai sahabat dan tempat untuk meminta saran.Orang yang lahir dalam naungan zodiak Capricon lebih pintar dalam mengatur keuangan dan berhati-hati dalam mengambil keputusan, dan karena hal itu pula mereka juga cenderung memiliki hidup yang lebih stabil. ' ,MessageType.text)
-}
-else if (text == 'zodiak Aquarius'){
-conn.sendMessage(id, '*zodiak Aquarius* Aquarius: 20 Januari - 18 Februari Pemilik zodiak kesebelas ini kebanyakan memiliki sifat pemalu dan terkesan pendiam, tapi mereka juga bisa sangat energik dan agresif. Mereka juga termasuk orang pemikir serta mampu melihat jauh ke depan sekaligus dari kedua sisi permasalahan tanpa prasangka. Kemampuan itu cenderung membuat mereka mudah menyelesaikan masalah.Dengan sifat dan karakter zodiak Aquarius yang visioner tersebut, dia mampu memahami masa depan dan tahu persis apa yang ingin dilakukan lima atau sepuluh tahun ke depan.Sementara kelemahan mereka yakni sangat temperamental, emosional, sulit diprediksi, keras kepala, dan lebih suka menyendiri yang cenderung memisahkan diri dengan orang lain.Tak heran bila mereka sangat individualistis dan sulit berkelompok. Aquarius memiliki kebutuhan untuk menyendiri dan menjauh dari segalanya. Hal ini dianggap berguna untuk membantu memulihkan kekuatannya' ,MessageType.text)
-}
-else if (text == 'zodiak Pisces'){
-conn.sendMessage(id, '*zodiak Pisces* Pisces: 19 Februari - 20 Maret rela berkorban untuk membantu orang lain semampu mereka. Pisces mau melakukan yang terbaik untuk membantu siapa pun dengan cara apa pun yang dia bisa. Biasanya, Pisces akan mendengarkan dulu yang dikatakan orang lain sebelum dia mengungkapkan pendapatnya. Hanya orang yang tulus hatinya yang mampu berempati. Pisces akan berdiri di samping teman-temannya yang membutuhkan bantuannya dan menyelami pikiran dan hati mereka. Pisces adalah pendengar dan pengamat yang sangat baik yang memiliki pikiran intuitif untuk meramalkan atau memprediksi apa yang akan terjadi dalam waktu dekat.Intuisi akan menjadi suara batin bagi Pisces yang membantunya mencari petunjuk di sekitar orang lain dan menggunakan informasi yang dikumpulkan untuk membuat perkiraan perkiraan.' ,MessageType.text)
-
-
 
    if (text.includes('nulis')){
   var teks = text.replace(/nulis /, '')
@@ -401,9 +345,10 @@ conn.sendMessage(id, '*zodiak Pisces* Pisces: 19 Februari - 20 Maret rela berkor
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
         })
-    })
+     })
 }
 
+   
 if (text.includes("covidindo"))
    {
 const get = require('got')
@@ -446,7 +391,7 @@ if (text.includes("sholat")){
 })
 }
 
-   if (text.includes("quotes"))
+if (text.includes("quotes"))
    {
       var url = 'https://jagokata.com/kata-bijak/acak.html'
       axios.get(url)
@@ -607,41 +552,14 @@ if (text.includes("nama"))
     });
     }
 
-if (text.includes("randomanime"))
-   {
-    var items = ["anime girl", "anime cantik", "anime", "anime aesthetic"];
-    var cewe = items[Math.floor(Math.random() * items.length)];
-    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
-    
-    axios.get(url)
-      .then((result) => {
-        var b = JSON.parse(JSON.stringify(result.data));
-        var cewek =  b[Math.floor(Math.random() * b.length)];
-        imageToBase64(cewek) // Path to the image
-        .then(
-            (response) => {
-	var buf = Buffer.from(response, 'base64'); // Ta-da	
-              conn.sendMessage(
-            id,
-              buf,MessageType.image)
-       
-            }
-        )
-        .catch(
-            (error) => {
-                console.log(error); // Logs an error if there was one
-            }
-        )
-    
-    });
-    }
-
 if (text.includes("chord")){
 const teks = text.split("chord")[1]
     axios.get(`https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=${teks}`).then ((res) => {
          conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.tex)
         let hasil = `❣ ️ *chord music* ❣ ️${teks} \n\n\n ${res.data.result.lirik}`
     conn.sendMessage(id, hasil, MessageType.text)
+    })
+}
 
 if (text.includes("lirik")){
 	const teks = text.split("lirik")[1]
@@ -751,21 +669,57 @@ if (text.includes("animehd"))
                 console.log(error);
             }
         )
-    
-    });
+      });
     }
 
-/*if (text.includes("!chord")){
-    const teks = text.split("!chord")[1]
-    axios.get(`https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=${teks}`).then ((res) => {
-         conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.tex)
-        let hasil = `❣ ️ *chord music* ❣ ️${teks} \n\n\n ${res.data.result.lirik}`
-    conn.sendMessage(id, hasil, MessageType.text)*/
+if (text.includes("!scdl")){
+const fs = require("fs");
+const scdl = require("./lib/scdl");
 
-})
+scdl.setClientID("iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX");
+
+scdl("https://m.soundcloud.com/abdul-muttaqin-701361735/lucid-dreams-gustixa-ft-vict-molina")
+    .pipe(fs.createWriteStream("mp3/song.mp3"));
 }
 
 
 
+ else if (text.includes("!tts")) {
+  var teks = text.split("!ttsid ")[1];
+  var path = require('path');
+  var text1 = teks.slice(6);
+  text1 = suara;
+  var suara = text.replace(/!ttsid/g, text1);
+  var filepath = 'mp3/bacot.wav';
+  
+  
+/*
+ * save audio file
+ */
+
+gtts.save(filepath, suara, function() {
+  console.log(`${filepath} MP3 SAVED!`)
+});
+await new Promise(resolve => setTimeout(resolve, 500));
+
+	if(suara.length > 200){ // check longness of text, because otherways google translate will give me a empty file
+  msg.reply("Text to long, split in text of 200 characters")
+}else{
+
+const buffer = fs.readFileSync(filepath)
+	conn.sendMessage(id , buffer , MessageType.audio);
+
+};
+
+
+}
+
+
+
+
+
+
+   // end of file
+
+
 })
-//End off file
