@@ -415,30 +415,7 @@ conn.sendMessage(id, '*zodiak Aquarius* Aquarius: 20 Januari - 18 Februari Pemil
 else if (text == 'zodiak Pisces'){
 conn.sendMessage(id, '*zodiak Pisces* Pisces: 19 Februari - 20 Maret rela berkorban untuk membantu orang lain semampu mereka. Pisces mau melakukan yang terbaik untuk membantu siapa pun dengan cara apa pun yang dia bisa. Biasanya, Pisces akan mendengarkan dulu yang dikatakan orang lain sebelum dia mengungkapkan pendapatnya. Hanya orang yang tulus hatinya yang mampu berempati. Pisces akan berdiri di samping teman-temannya yang membutuhkan bantuannya dan menyelami pikiran dan hati mereka. Pisces adalah pendengar dan pengamat yang sangat baik yang memiliki pikiran intuitif untuk meramalkan atau memprediksi apa yang akan terjadi dalam waktu dekat.Intuisi akan menjadi suara batin bagi Pisces yang membantunya mencari petunjuk di sekitar orang lain dan menggunakan informasi yang dikumpulkan untuk membuat perkiraan perkiraan.' ,MessageType.text)
 
-   if(text.includes("listzodiak")){
-var num = text.replace(/!help/ , "")
-var idn = num.replace("0","+62");
 
-console.log(id);
-const gg = idn+''
-
-const exists = await conn.isOnWhatsApp (gg)
-console.log(exists);
-conn.sendMessage(id ,`╭───「 *ZODIAK LIST* 」
-├≽  Zodiak Aries (21 Maret – 20 April)
-├≽ ️Zodiak Taurus (21 April – 20 Mei)
-├≽ ️Zodiak Gemini (21 Mei – 20 Juni)
-├≽ ️Zodiak Cancer (21 Juni – 20 Juli)
-├≽ ️Zodiak Leo (21 Juli – 21 Agustus)
-├≽ ️Zodiak Virgo (22 Agustus – 22 September)
-├≽ ️Zodiak Libra (23 September – 22 Oktober)
-├≽ ️Zodiak Scorpio (23 Oktober – 22 November)
-├≽ ️Zodiak Sagittarius (23 November – 20 Desember)
-├≽ ️Zodiak Capricorn (21 Desember – 19 Januari)
-├≽ ️Zodiak Aquarius (20 Januari – 18 Februari)
-├≽ ️Zodiak Pisces (19 Februari – 20 Maret)
-╰───────── ${gg} ${exists ? " " : "*Thank for Using ROHIDXBOT* 💕"}`, MessageType.text)
-}
 
    if (text.includes('nulis')){
   var teks = text.replace(/nulis /, '')
