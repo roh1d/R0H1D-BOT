@@ -799,7 +799,6 @@ const teks = text.replace(/tts /, "")
 const gtts = (`https://rest.farzain.com/api/tts.php?id=${teks}&apikey=O8mUD3YrHIy9KM1fMRjamw8eg`)
 conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
     conn.sendMessage(id, gtts ,MessageType.text);
-});
 }
 
 //End off file
