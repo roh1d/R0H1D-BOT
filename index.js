@@ -363,12 +363,12 @@ conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType
 
    if (text.includes('nulis')){
   var teks = text.replace(/nulis /, '')
-    axios.get('https://bangandre.herokuapp.com/nulis?teks='+teks)
+    axios.get('https://mhankbarbars.herokuapp.com/nulis?text='+teks)
     .then((res) => {
       imageToBase64(res.data.result)
         .then(
           (ress) => {
-            conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
+            conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
         })
@@ -389,6 +389,15 @@ const get = require('got')
     conn.sendMessage(id,` *🔎DATA WABAH COVID-19 TERBARU DI INDONESIA🔍* \n\n *📈Positif ==>* _${positif}_ \n📉 *Sembuh ==>* _${sembuh}_ \n *📋Meninggal ==>* _${meninggal}_ \n *🗒️Dirawat ==>* _${dirawat}_ `, MessageType.text);
 }
 
+if (text.includes("covidnegara")){
+const aris = text.replace(/covidnegara /, "")
+axios.get(`https://arugaz.herokuapp.com/api/corona?country=${aris}`).then((res) => {
+conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
+    let hasil = `Negara : ${res.data.result.country}\n\nActive : ${res.data.result.active}\ncasesPerOneMillion :${res.data.result.casesPerOneMillion}\ncritical : ${res.data.result.critical}\ndeathsPerOneMillion : ${res.data.result.deathsPerOneMillion}\nrecovered : ${res.data.result.recovered}\ntestPerOneMillion : ${res.data.result.testPerOneMillion}\ntodayCases : ${res.data.result.todayCases}\ntodayDeath : ${res.data.result.todayDeath}\ntotalCases : ${res.data.result.totalCases}\ntotalTest : ${res.data.result.totalTest}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+  })
+ }
+
    if (text == 'quran'){
 axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
     const sr = /{(.*?)}/gi;
@@ -396,6 +405,15 @@ axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
     const ket = `${hs}`.replace(sr, '');
     let hasil = `[${ket}]   ${res.data.acak.ar.teks}\n\n${res.data.acak.id.teks}(QS.${res.data.surat.nama}, Ayat ${ket})`;
     conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+
+if (text.includes("sholat")){
+  const teks = text.replace(/sholat /, "")
+  axios.get(`https://mhankbarbar.herokuapp.com/api/jadwalshalat?daerah=${teks}`).then ((res) =>{
+  conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
+  let hasil = `Jadwal sholat di ${teks} hari ini adalah\n\nImsyak : ${res.data.Imsyak}\nSubuh : ${res.data.Subuh} \nDzuhur : ${res.data.Dzuhur}\nAshar : ${res.data.Ashar} \nMaghrib : ${res.data.Maghrib}\nIsya : ${res.data.Isya} \nTengah malam : ${res.data.Dhuha} `;
+  conn.sendMessage(id, hasil, MessageType.text);
 })
 }
 
@@ -592,8 +610,8 @@ if (text.includes("randomanime"))
 if (text.includes("chord")){
 const teks = text.replace(/chord /, "")
 axios.get(`https://alfians-api.herokuapp.com/api/chord?q=${teks}`).then((res) => {
-	conn.sendMessage(id, '[WAIT] Searching...⏳', MessageType.text)
-    let hasil = `*Nih Chord Gitar ${teks} kak* \n\nCord: _${res.data.result}_ `;
+conn.sendMessage(id, '[WAIT] Searching...⏳', MessageType.text)
+    let hasil = `*Nih Cord Lagu Onii Chan~${teks} * \n\nCord: _${res.data.result}_ `;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
