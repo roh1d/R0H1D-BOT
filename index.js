@@ -1,8 +1,8 @@
-/*Script by R0H1D X AR1S CODE
+/*Script by R0H1D X ArugaZ
 DILARANG MENGUBAH NAMA INI TANPA SEIZIN KAMI BERDUA!!
 */
 
-const XBOT = 'ROHIDXBOT'; 
+const XBOT = 'ROHID X-BOT'; 
 const instagram = 'https://bit.ly/2KYlka9'; 
 const nomer = 'Wa.me/+6282124946711'; 
 const aktif = 'Tergantung internet';
@@ -70,6 +70,7 @@ conn.on('message-status-update', json =>
 
 conn.on('message-new', async(m) =>
 {
+
    const messageContent = m.message
    const text = m.message.conversation
    let id = m.key.remoteJid
@@ -139,66 +140,6 @@ conn.sendMessage(id, menu.donasi ,MessageType.text);
                conn.sendMessage(id, pantun, MessageType.text)
             });
       }
-
-   }
-   if (text.includes("yt"))
-   {
-      const url = text.replace(/!yt/, "");
-      const exec = require('child_process').exec;
-
-      var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-
-      const ytdl = require("ytdl-core")
-      if (videoid != null)
-      {
-         console.log("video id = ", videoid[1]);
-      }
-      else
-      {
-         conn.sendMessage(id, "gavalid", MessageType.text)
-      }
-      ytdl.getInfo(videoid[1]).then(info =>
-      {
-         if (info.length_seconds > 1000)
-         {
-            conn.sendMessage(id, " videonya kepanjangan", MessageType.text)
-         }
-         else
-         {
-
-            console.log(info.length_seconds)
-
-            function os_func()
-            {
-               this.execCommand = function (cmd)
-               {
-                  return new Promise((resolve, reject) =>
-                  {
-                     exec(cmd, (error, stdout, stderr) =>
-                     {
-                        if (error)
-                        {
-                           reject(error);
-                           return;
-                        }
-                        resolve(stdout)
-                     });
-                  })
-               }
-            }
-            var os = new os_func();
-
-            os.execCommand('ytdl ' + url + ' -q highest -o mp4/' + videoid[1] + '.mp4').then(res =>
-            {
-		const buffer = fs.readFileSync("mp4/"+ videoid[1] +".mp4")
-               conn.sendMessage(id, buffer, MessageType.video)
-            }).catch(err =>
-            {
-               console.log("os >>>", err);
-            })
-
-         }
-      });
 
    }
 
@@ -313,6 +254,9 @@ conn.sendMessage(id, ' _Iyah aku disini kak...ada yang bisa kami bantu? Ketik *m
 else if (text == 'Euy'){
 conn.sendMessage(id, ' _Iyah aku disini kak...ada yang bisa kami bantu? Ketik *menu* untuk melihat fitur bot kami🙏_ ' ,MessageType.text);
 }
+else if (text == 'Bot'){
+conn.sendMessage(id, ' _Iyah aku disini kak...ada yang bisa kami bantu? Ketik *menu* untuk melihat fitur bot kami🙏_ ' ,MessageType.text);
+}
 else if (text == 'makasi'){
 conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType.text);
 }
@@ -338,22 +282,9 @@ else if (text == 'Thanks'){
 conn.sendMessage(id, ' _Sama sama, semoga harimu menyenangkan :)_ ' ,MessageType.text);
 }
 
-   if (text.includes('!nulis')){
-  var teks = text.replace(/!nulis /, '')
-    axios.get('https://bangandre.herokuapp.com/nulis?teks='+teks)
-    .then((res) => {
-      imageToBase64(res.data.result)
-        .then(
-          (ress) => {
-            conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
-}
 if (text.includes('nulis')){
   var teks = text.replace(/nulis /, '')
-    axios.get('https://mhankbarbars.herokuapp.com/nulis?text='+teks)
+    axios.get('https://arugaz.herokuapp.com/api/nulis?text='+teks)
     .then((res) => {
       imageToBase64(res.data.result)
         .then(
@@ -365,14 +296,32 @@ if (text.includes('nulis')){
     })
 }
 
-if (text.includes("covidnegara")){
-const aris = text.replace(/covidnegara /, "")
+if (text.includes("covid19")){
+const aris = text.replace(/covid19 /, "")
 axios.get(`https://arugaz.herokuapp.com/api/corona?country=${aris}`).then((res) => {
 conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
-    let hasil = `Negara : ${res.data.result.country}\n\nAktif : ${res.data.result.active}\nKasus :${res.data.result.casesPerOneMillion}\nKritis : ${res.data.result.critical}\nMeninggal : ${res.data.result.deathsPerOneMillion}\nrecovered : ${res.data.result.recovered}\Dampak : ${res.data.result.testPerOneMillion}\nKasus hari ini : ${res.data.result.todayCases}\nKematian hari ini : ${res.data.result.todayDeath}\nTotal kasus : ${res.data.result.totalCases}\nTotal dampak : ${res.data.result.totalTest}`;
+    let hasil = `Negara : ${res.data.result.country}\n\nAktif : ${res.data.result.active}\nKasus :${res.data.result.casesPerOneMillion}\nKritis : ${res.data.result.critical}\nMeninggal : ${res.data.result.deathsPerOneMillion}\nPenanganan : ${res.data.result.recovered}\nDampak : ${res.data.result.testPerOneMillion}\nKasus hari ini : ${res.data.result.todayCases}\nKematian hari ini : ${res.data.result.todayDeath}\nTotal kasus : ${res.data.result.totalCases}\nTotal dampak : ${res.data.result.totalTest}`;
     conn.sendMessage(id, hasil ,MessageType.text);
   })
  }
+
+if (text.includes("bmkg")){
+  const aris = text.replace(/infogempa /, "")
+  axios.get(`https://arugaz.herokuapp.com/api/infogempa`).then ((res) =>{
+  conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
+  let hasil = ` *Info Gempa* \n\ *Lokasi 📍* : _${res.data.lokasi}_ \n *Kedalaman 〽 ️* : _${res.data.kedalaman}_ \n *Koordinat ️📌* : _${res.data.koordinat}_ \n *Magnitude 💢* : _${res.data.magnitude}_ \n *Waktu ⏳* : _${res.data.waktu}_ `;
+  conn.sendMessage(id, hasil, MessageType.text);
+})
+}
+
+if (text.includes("cuaca")){
+const teks = text.replace(/cuaca/, "")
+axios.get(`https://arugaz.herokuapp.com/api/cuaca?q=${teks}`).then((res) => {
+conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
+    let hasil = `➸ Tempat : ${weather.result.tempat}\n\n➸ Angin : ${weather.result.angin}\n➸ Cuaca : ${weather.result.cuaca}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
 
    if (text == 'quran'){
 axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
@@ -386,9 +335,9 @@ axios.get('https://api.banghasan.com/quran/format/json/acak').then((res) => {
 
 if (text.includes("sholat")){
   const teks = text.replace(/sholat /, "")
-  axios.get(`https://mhankbarbar.herokuapp.com/api/jadwalshalat?daerah=${teks}`).then ((res) =>{
+  axios.get('https://arugaz.herokuapp.com/api/jadwalshalat?daerah=${teks}').then ((res) =>{
   conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
-  let hasil = `Jadwal sholat di ${teks} hari ini adalah\n\nImsyak : ${res.data.Imsyak}\nSubuh : ${res.data.Subuh} \nDzuhur : ${res.data.Dzuhur}\nAshar : ${res.data.Ashar} \nMaghrib : ${res.data.Maghrib}\nIsya : ${res.data.Isya} \nTengah malam : ${res.data.Dhuha} `;
+  let hasil = `Jadwal sholat di ${teks} hari ini adalah\n\nImsyak : ${res.data.imsyak}\nSubuh : ${res.data.subuh} \nDzuhur : ${res.data.dzuhur}\nAshar : ${res.data.ashar} \nMaghrib : ${res.data.maghrib}\nIsya : ${res.data.isya} \nTengah malam : ${res.data.dhuha} `;
   conn.sendMessage(id, hasil, MessageType.text);
 })
 }
@@ -415,22 +364,6 @@ if (text.includes("quotes"))
 
          });
    }
-
-   if (text.includes("bijak")){
-const teks = text.replace(/bijak /, "")
-axios.get(`https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/katabijax.txt${teks}`).then((res) => {
-    let hasil = `katabijak tersedia\n👇👇👇👇👇👇👇👇👇\n\nJudul: ${res.data.title}\n\katabijak Tersedia: ${res.data.filesize}\n\nLink: ${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
-
-if (text.includes("fakta")){
-const teks = text.replace(/fakta /, "")
-axios.get(`https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/faktaunix.txt${teks}`).then((res) => {
-    let hasil = `fakta tersedia\n👇👇👇👇👇👇👇👇👇\n\nJudul: ${res.data.title}\n\fakta Tersedia: ${res.data.filesize}\n\nLink: ${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
 
 if (text.includes("nama")) 
   {
@@ -494,6 +427,22 @@ if (text.includes("nama"))
   });
   }
 
+if (text.includes("zodiak")){
+const teks = text.replace(/zodiak /, "")
+axios.get(`https://arugaz.herokuapp.com/api/getzodiak?nama=${teks}&tgl-bln-thn=${teks}`).then((res) => {
+    let hasil = `➸ Lahir : ${res.data.lahir}\n➸ ultah : ${res.data.ultah}\n➸  ️usia : ${res.data.usia}\n➸ zodiak : ${res.data.zodiak} ️`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+  })
+ }
+
+if (text.includes("gay lo")){
+const aris = text.replace(/gay lo /, "")
+axios.get(`https://arugaz.herokuapp.com/api/howgay`).then((res) => {
+    let hasil = ` ${res.data.desc} \n\n *Tingkat Gay* : _${res.data.persen}_%`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+
    if (text.includes("ptlcowo"))
    {
     var items = ["ullzang girl", "cewe cantik", "hijab cantik", "korean girl", "remaja cantik", "cewek korea", "cewek jepang"];
@@ -555,32 +504,31 @@ if (text.includes("nama"))
     }
 
 if (text.includes("chord")){
-const teks = text.split("chord")[1]
-    axios.get(`https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=${teks}`).then ((res) => {
-         conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.tex)
-        let hasil = `❣ ️ *chord music* ❣ ️${teks} \n\n\n ${res.data.result.lirik}`
-    conn.sendMessage(id, hasil, MessageType.text)
-    })
+const teks = text.replace(/chord /, "")
+axios.get(`https://alfians-api.herokuapp.com/api/chord?q=${teks}`).then((res) => {
+	conn.sendMessage(id, '[WAIT] Searching...⏳', MessageType.text)
+    let hasil = `*Nih Chord Lagu ${teks}* \n\nChord: _${res.data.result}_ `;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
 }
 
 if (text.includes("lirik")){
 	const teks = text.split("lirik")[1]
 	axios.get(`http://scrap.terhambar.com/lirik?word=${teks}`).then ((res) => {
 	     conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
-	 	let hasil = `🎶lirik🎶 lagu ${teks} \n\n\n ${res.data.result.lirik}`
+	 	let hasil = `🎶Nih Lirik🎶 Lagu ${teks} \n\n\n ${res.data.result.lirik}`
 	conn.sendMessage(id, hasil, MessageType.text)
 	})
 }
 
-if (text.includes("twt")){
-const teks = text.replace(/twt /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/twit?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
-	conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
-    let hasil = `âœ…Berhasil$ silahkan klik link di bawah untuk mendownload hasilnya$\nKlik link dibawahðŸ—¡ï¸\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
+if (text.includes("film")){
+const teks = text.replace(/film /, "")
+axios.get(`https://arugaz.herokuapp.com/api/sdmovie?film=${teks}`).then((res) => {
+conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
+    let hasil = ` *Film Anime ${teks} :* \n\n *Judul:* _${res.data.result.title}_ \n\n *Rating:* _${res.data.result.rating}_ \n\n *Info:* _${res.data.result.sinopsis}_ \n\n *Link Video:* _${res.data.result.video}_ `;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
-
 
 if (text.includes("tiktok")) {
 const tictoc = text.replace(/tiktok /, "")
@@ -588,6 +536,24 @@ axios.get(`http://scrap.terhambar.com/tiktokfull?link=${tictoc}`).then((res) => 
 	 conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
      let titoe = `âœ…Berhasil$$$ Silahkan klik link dibawah ini untuk mendownload hasilnya$ \nKlik link dibawahðŸ—¡ï¸\n\nJudul: ${res.data.deskripsi} \n\nDurasi: ${res.data.durasi}\n\nNama: ${res.data.nama}\n\nUrl: ${res.data.urlvideo}`;
 conn.sendMessage(id, titoe, MessageType.text);
+})
+}
+
+if (text.includes("yta")){
+const teks = text.replace(/yta /, "")
+axios.get(`https://arugaz.herokuapp.com/api/yta?url=${teks}`).then((res) => {
+	conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
+    let hasil = `Lagu Berhasil Di Download, silahkan klik link dan download hasilnya\nKlik link dibawah\n\nJudul: ${res.data.title}\n\nUkuran audio: ${res.data.filesize}\n\nLink: ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+
+if (text.includes("ytv")){
+const teks = text.replace(/ytv /, "")
+axios.get(`https://arugaz.herokuapp.com/api/ytv?url=${teks}`).then((res) => {
+	conn.sendMessage(id, '[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar', MessageType.text)
+    let hasil = `Video Berhasil Di Download, silahkan klik link dan download hasilnya\nKlik link dibawah\n\nJudul: ${res.data.title}\n\nUkuran video: ${res.data.filesize}\n\nLink: ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
 
@@ -599,18 +565,22 @@ axios.get(`https://arugaz.herokuapp.com/api/fb?url=${teks}`).then((res) => {
 })
 }
 
-if (text.includes("ig")){
-const teks = text.replace(/ig /, "")
-axios.get(`https://alfians-api.herokuapp.com/api/ig?url=${teks}`).then((res) => {
-    let hasil = `✅Dwonload sendiri link error maaf\n\nLink: ${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
+if (text.includes('igstalk')){
+  var teks = text.replace(/igstalk /, '')
+    axios.get('https://arugaz.herokuapp.com/api/stalk?username='+teks)
+    .then((res) => {
+      imageToBase64(res.data.Profile_pic)
+        .then(
+          (ress) => {                                                                                                                                    var buf = Buffer.from(ress, 'base64')
+            conn.sendMessage(id, buf, MessageType.image)
+        })
+    })
 }
 
 if (text.includes("infoanime")){
 const teks = text.replace(/infoanime /, "")
 axios.get(`https://arugaz.herokuapp.com/api/dewabatch?q=${teks}`).then((res) => {
-	conn.sendMessage(id, '[WAIT] Proses...❗', MessageType.text)
+	conn.sendMessage(id, '[WAIT] Sedang diproses...❗', MessageType.text)
     let hasil = ` *INFO ANIME ${teks} :* \n\n _${res.data.result}_ `;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -620,13 +590,13 @@ if (text.includes("loli"))
    {
     var items = ["anime loli","anime loli sange","anime loli fackgirll","anime loli i love you"];
     var nime = items[Math.floor(Math.random() * items.length)];
-    var url = "https://api.fdci.se/rep.php?gambar=" + nime;
+    var url = "https://api.fdci.se/rep.php?gambar=" + loli;
     
     axios.get(url)
       .then((result) => {
         var n = JSON.parse(JSON.stringify(result.data));
-        var nimek =  n[Math.floor(Math.random() * n.length)];
-        imageToBase64(nimek) 
+        var loli =  n[Math.floor(Math.random() * n.length)];
+        imageToBase64(loli) 
         .then(
             (response) => {
 	var buf = Buffer.from(response, 'base64'); 
@@ -658,7 +628,7 @@ if (text.includes("animehd"))
         imageToBase64(nimek) 
         .then(
             (response) => {
-    conn.sendMessage(id, '[WAIT] Searching...❗', MessageType.text)
+    conn.sendMessage(id, '[WAIT] Sedang diproses...❗', MessageType.text)
 	var buf = Buffer.from(response, 'base64'); 
               conn.sendMessage(
             id,
@@ -674,25 +644,13 @@ if (text.includes("animehd"))
       });
     }
 
-if (text.includes("scdl")){
-const fs = require("fs");
-const scdl = require("./lib/scdl");
-
-scdl.setClientID("iZIs9mchVcX5lhVRyQGGAYlNPVldzAoX");
-
-scdl("https://m.soundcloud.com/abdul-muttaqin-701361735/lucid-dreams-gustixa-ft-vict-molina")
-    .pipe(fs.createWriteStream("mp3/song.mp3"));
-}
-
-
-
- else if (text.includes("tts")) {
-  var teks = text.split("ttsid ")[1];
+ if (text.includes("tts")) {
+  var teks = text.split("tts ")[1];
   var path = require('path');
   var text1 = teks.slice(6);
   text1 = suara;
   var suara = text.replace(/!ttsid/g, text1);
-  var filepath = 'mp3/bacot.wav';
+  var filepath = 'mp3/tts.mp3';
   
   
 /*
@@ -712,16 +670,5 @@ const buffer = fs.readFileSync(filepath)
 	conn.sendMessage(id , buffer , MessageType.audio);
 
 };
-
-
 }
-
-
-
-
-
-
-   // end of file
-
-
 })
