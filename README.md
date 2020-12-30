@@ -72,9 +72,9 @@ after running it you need to scan the qr
 
 ## Special Thanks to
 * [`adiwajshing/Baileys`](https://github.com/adiwajshing/Baileys)
-* [`MhankBarBar/termux-wabot`](https://github.com/MhankBarBar/termux-wabot)
-* [`Toby`](https://github.com/TobyG74)
-* [`IbnuSyawall`](https://github.com/ibnusyawall)
 
 ### Donate
-* [`Saweria`](https://saweria.co/donate/aditiaalfians)
+* OVO : 085155199124
+* DANA : 082124946711
+* GOPAY : 082124946711
+* QRIS : https://bit.ly/qrnasmed
