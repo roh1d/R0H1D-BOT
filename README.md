@@ -59,6 +59,7 @@ after running it you need to scan the qr
 |       ✅       | Chord lagu  |
 |       ✅       | Lirik lagu  |
 |       ✅       | TTS teks  |
+|       ✅       | ALAY Teks  |
 
 | Menu Downloader  |          Feature                     |
 | :------------: | :---------------------------------------------: |
@@ -67,10 +68,27 @@ after running it you need to scan the qr
 |       ✅        |   Fb Download			|
 |       ✅        |   Ig Download
 |       ✅        |   Cari Film		                |
+
+| Menu Ramalan  |          Feature                     |
+| :------------: | :---------------------------------------------: |
+|       ✅        |   Arti Nama                |
+|       ✅        |   Kecocokan Jodoh				|
+|       ✅        |   Seberapa Gay Lo			|
+|       ✅        |   Seberapa Bucin Lo
+|       ✅        |   Apa Zodiak Lo
+
+| Menu Edukasi  |          Feature                     |
+| :------------: | :---------------------------------------------: |
+|       ✅        |   Nulis                |
+|       ✅        |   Quran				|
+|       ✅        |   Jadwal Sholat			|
                 
+
+* DLL SEGERA DATANG
 
 ## Special Thanks to
 * [`adiwajshing/Baileys`](https://github.com/adiwajshing/Baileys)
+* [`ArugaZ`](https://github.com/ArugaZ)
 
 ### Donate
 * OVO : 085155199124
