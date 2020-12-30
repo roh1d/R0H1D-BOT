@@ -40,23 +40,41 @@ Clone the project and run
 after running it you need to scan the qr
 
 
-## features 
+## Features
 
-```bash
-> Sticker 
+| Sticker Creator |                Feature           |
+| :-----------: | :--------------------------------: |
+|       ✅       | Send Photo with Caption          |
+|       ✅       | Reply A Photo                    |
+|       ✅       | Reply A Video or GIF             |
+|       ✅       | Send Video or GIF with Caption   |
+|       ✅       | Reply A Sticker ( sticker to image ) |
 
-> Nama 
+| Other  |                     Feature                     |
+| :------------: | :---------------------------------------------: |
+|       ✅        |   Text to speech                |
+|       ✅        |   Writing feature 				|
+|       ✅        |   What Anime Is This 			|
+|       ✅        |   Simsimi		                |
 
-> Nulis
+| Group  |                     Feature               |
+| :-----------: | :--------------------------------: |
+|       ✅        |   Tagall/Mentionall member       |
+|       ✅        |   Kick Member Group	             |
+|       ✅        |   Add Member Group	             |
+|       ✅        |   Get List Admins Group          |
 
-> Random pantun
+| Owner Bot  |                     Feature           |
+| :-----------: | :--------------------------------: |
+|       ✅        |   Set Prefix                     |
+|       ✅        |   Broadcast                      |
+|       ✅        |   Clear All Chats                |
 
-> Penyegar Timeline
+## Special Thanks to
+* [`adiwajshing/Baileys`](https://github.com/adiwajshing/Baileys)
+* [`MhankBarBar/termux-wabot`](https://github.com/MhankBarBar/termux-wabot)
+* [`Toby`](https://github.com/TobyG74)
+* [`IbnuSyawall`](https://github.com/ibnusyawall)
 
-> Youtube Downloader
-
-> Dll
-
-```
-
-more features was coming soon
+### Donate
+* [`Saweria`](https://saweria.co/donate/aditiaalfians)
