@@ -10,7 +10,7 @@ ini semua gratis, jangan pelit ⭐️ ya :D
 <p align="center"><a href="https://instagram.com/m.rohid_hidayat21/" target="_blank">Chat me on Instagram</a>.</p>
 </div>
 
-## Installation
+# Installation
 
 
 # Termux
