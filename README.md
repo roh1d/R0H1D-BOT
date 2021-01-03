@@ -95,6 +95,7 @@ after running it you need to scan the qr
 * [`adiwajshing/Baileys`](https://github.com/adiwajshing/Baileys)
 * [`ArugaZ`](https://github.com/ArugaZ)
 * [`Alfians`](https://github.com/alfiansx)
+* [`FaraazAPI`]
 
 ### Donate
 * OVO : 085155199124
