@@ -102,3 +102,4 @@ after running it you need to scan the qr
 * DANA : 082124946711
 * GOPAY : 082124946711
 * QRIS : https://bit.ly/qrnasmed
+* Saweria : https://saweria.co/rohid21
