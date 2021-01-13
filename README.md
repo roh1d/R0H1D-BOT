@@ -98,8 +98,4 @@ after running it you need to scan the qr
 * [`FaraazAPI`](https://rest.farzain.com)
 
 ### Donate
-* OVO : 085155199124
-* DANA : 082124946711
-* GOPAY : 082124946711
-* QRIS : https://bit.ly/qrnasmed
 * Saweria : https://saweria.co/rohid21
