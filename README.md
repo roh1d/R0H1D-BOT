@@ -5,7 +5,7 @@
 <a href="#"><img title="Termux WhatsApp Bot" src="https://img.shields.io/badge/Termux Whatsapp Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 
-ini semua gratis, jangan pelit ⭐️ ya :D
+<p align="center">ini semua gratis, jangan pelit ⭐️ ya :D
 <p align="center"><a href="https://nasionalmedia.com/" target="_blank">My Business Website</a>.</p>
 <p align="center"><a href="https://instagram.com/m.rohid_hidayat21/" target="_blank">Chat me on Instagram</a>.</p>
 </div>
